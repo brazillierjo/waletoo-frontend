@@ -3,7 +3,6 @@ import { Logs } from "../../APIs/Logs";
 
 export const loginUser = createAsyncThunk("LOGIN", async (data: { email: string; password: string }) => {
     const response = await Logs.login(data.email, data.password);
-    console.log("response", response);
     return response.data;
 });
 
