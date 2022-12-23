@@ -18,5 +18,6 @@ export default function ProtectedRoutes() {
         }
     }, []);
 
-    isLoggedIn ? <Outlet /> : null;
+    if (!isLoggedIn) return null;
+    return <Outlet />;
 }

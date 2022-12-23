@@ -5,8 +5,9 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import Connexion from "./pages/Connexion";
 import Sidebar from "./components/Commons/Sidebar";
 import "./index.css";
+import { store } from "./Redux/store";
+import { Provider } from "react-redux";
 
-// structure of the App when logged in
 const AppLayout = () => {
     return (
         <div className='flex'>
@@ -16,7 +17,6 @@ const AppLayout = () => {
     );
 };
 
-// routes
 const router = createBrowserRouter([
     {
         path: "/connexion",
@@ -49,6 +49,8 @@ const router = createBrowserRouter([
 // render the App
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <Provider store={store}>
+            <RouterProvider router={router} />
+        </Provider>
     </React.StrictMode>
 );
