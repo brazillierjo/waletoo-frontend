@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 element: <ProtectedRoutes />,
                 children: [
                     {
-                        path: "/mon-wallet",
+                        path: "/",
                         element: <h1>Mon wallet</h1>,
                     },
                     {
