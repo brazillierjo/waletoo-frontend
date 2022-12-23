@@ -1,8 +1,8 @@
 import { useState } from "react";
-import LoginForm from "../components/Connexions/LoginForm";
-import SignUpForm from "../components/Connexions/SignUpForm";
+import LoginForm from "../components/Logs/LoginForm";
+import SignUpForm from "../components/Logs/SignUpForm";
 
-export default function Connexion() {
+export default function Logs() {
     const [hasAccount, setHasAccount] = useState(true);
 
     return (

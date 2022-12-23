@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { Logs } from "../../APIs/Logs";
 
-const login = createAsyncThunk("login/login", async (data: { email: string; password: string }) => {
+export const loginUser = createAsyncThunk("LOGIN", async (data: { email: string; password: string }) => {
     const response = await Logs.login(data.email, data.password);
+    console.log("response", response);
     return response.data;
 });
 
@@ -15,14 +16,14 @@ const loginSlice = createSlice({
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(login.pending, (state, action) => {
+        builder.addCase(loginUser.pending, (state, action) => {
             state.loading = true;
         });
-        builder.addCase(login.fulfilled, (state, action) => {
+        builder.addCase(loginUser.fulfilled, (state, action) => {
             state.loading = false;
             state.data = action.payload;
         });
-        builder.addCase(login.rejected, (state, action) => {
+        builder.addCase(loginUser.rejected, (state, action) => {
             state.loading = false;
             console.log("state", state);
             console.log("action", action);
