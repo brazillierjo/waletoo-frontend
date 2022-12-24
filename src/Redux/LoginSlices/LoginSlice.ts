@@ -13,7 +13,11 @@ const loginSlice = createSlice({
         error: null,
         data: null,
     },
-    reducers: {},
+    reducers: {
+        storeUser: (state, action) => {
+            state.data = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(loginUser.pending, (state, action) => {
             state.loading = true;
@@ -31,3 +35,4 @@ const loginSlice = createSlice({
 });
 
 export const loginReducer = loginSlice.reducer;
+export const { storeUser } = loginSlice.actions;
