@@ -1,1 +1,1 @@
-1. TOKEN EXPIRE > /connexion
+1. TOKEN EXPIRE > /connexion (faire un .post avec un token puis vérifier la réponse)
